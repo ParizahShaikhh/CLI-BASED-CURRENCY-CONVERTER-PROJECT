@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
 import axios from "axios";
@@ -53,7 +55,7 @@ async function main() {
         const rates = await getExchangeRates(fromCurrency.toUpperCase());
         const conversionRate = rates[toCurrency.toUpperCase()];
 
-        
+
         if (!conversionRate) {
             console.error("Unable to find conversion rate for the specified currency.");
             return;
